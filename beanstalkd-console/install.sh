@@ -3,6 +3,9 @@
 # exit if a command fails
 set -e
 
+# install the php mbstring extension (needed for beanstalkd-console)
+docker-php-ext-install mbstring
+
 # install curl (needed to install rust)
 apt-get update && apt-get install -y curl
 
